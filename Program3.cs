@@ -38,7 +38,7 @@ namespace array
                         userInputSum += userInputArray[i];
                     }
 
-                    Console.WriteLine("сума чисел в массиве = " + userInputSum);
+                    Console.WriteLine("Сумма чисел в массиве = " + userInputSum);
                 }
                 else
                 {

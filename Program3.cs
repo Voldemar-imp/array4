@@ -11,19 +11,11 @@ namespace array
         static void Main(string[] args)
         {
             int[] userInputArray = new int[0];        
-            string userInput;
-            int userInputSum = 0;
+            string userInput;            
             bool areContinue = true;
 
             while (areContinue)
-            {
-                int[] tempUserInputArray = new int[userInputArray.Length + 1];
-
-                for (int i = 0; i < userInputArray.Length; i++)
-                {
-                    tempUserInputArray[i] = userInputArray[i];
-                }
-
+            {    
                 Console.WriteLine("Введите число или комманду:  exit - для выхода, sum - для вывода суммы чисел в массиве");
                 userInput = Console.ReadLine();
 
@@ -33,15 +25,24 @@ namespace array
                 }
                 else if (userInput == "sum")
                 {
+                    int userInputSum = 0;
+
                     for (int i = 0; i < userInputArray.Length; i++)
                     {
                         userInputSum += userInputArray[i];
                     }
 
-                    Console.WriteLine("Сумма чисел в массиве = " + userInputSum);
+                    Console.WriteLine("сума чисел в массиве = " + userInputSum);
                 }
                 else
                 {
+                    int[] tempUserInputArray = new int[userInputArray.Length + 1];
+
+                    for (int i = 0; i < userInputArray.Length; i++)
+                    {
+                        tempUserInputArray[i] = userInputArray[i];
+                    }
+
                     tempUserInputArray[tempUserInputArray.Length - 1] = Convert.ToInt32(userInput);
                     userInputArray = tempUserInputArray;
                     Console.WriteLine("Сейчас массив содержит следующие числа: ");
